@@ -1,0 +1,14 @@
+<table class="table">
+    <thead><tr>
+        <th>Products</th>
+        <th>Total price</th>
+        <th>Date</th>
+    </tr></thead>
+    <tbody>
+        <tr ng-repeat="order in $ctrl.orders | orderBy: 'time': true">
+            <td>{{order.products}}</td>
+            <td>{{order.totalPrice | currency}}</td>
+            <td>{{order.time | date:"dd.MM.yyyy 'at' h:mm"}}</td>
+        </tr>
+    </tbody>
+</table>

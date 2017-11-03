@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body  ng-app="testApp">
+
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li data-ui-sref="main" data-ui-sref-active="active"><a href="">Main</a></li>
+          <li data-ui-sref="cart" data-ui-sref-active="active"><a href="">Cart</a></li>
+          <li data-ui-sref="history" data-ui-sref-active="active"><a href="">History</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div ng-view></div>
+  <ui-view></ui-view>
+
+  <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-messages/angular-messages.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+  <script src="app.js"></script>
+  <script src="services/products.js"></script>
+  <script src="services/localStorageService.js"></script>
+  <script src="filters/arrayToString.js"></script>
+  <script src="components/shop/shop.js"></script>
+  <script src="components/cart/cart.js"></script>
+  <script src="components/history/history.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<table class="table">
+    <thead><tr>
+        <th>Id</th>
+        <th><a href="" ng-click="$ctrl.orderProp = 'name'">Name</a></th>
+        <th><a href="" ng-click="$ctrl.orderProp = 'price'">Price</a></th>
+        <th>Remove from cart</th>
+    </tr></thead>
+    <tbody>
+    <tr ng-repeat="product in $ctrl.products | filter:$ctrl.search.name | orderBy: $ctrl.orderProp">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price | currency:"$"}}</td>
+        <td><button class="btn btn-default" ng-click="$ctrl.remove(product)">Remove</button></td>
+    </tr>
+    <tr>
+        <td colspan="2">Total price:</td>
+        <td>{{$ctrl.totalPrice | currency}}</td>
+        <td><button class="btn btn-default" ng-show="$ctrl.products.length" ng-click="$ctrl.confirmBuy()">Buy</button></td>
+    </tr>
+    </tbody>
+</table>

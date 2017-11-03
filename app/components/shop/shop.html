@@ -1,0 +1,22 @@
+<div class="form-group">
+    <input class="form-control" ng-model="$ctrl.search.name" placeholder="Enter dish name">
+</div>
+
+<table class="table">
+    <thead><tr>
+        <th>Id</th>
+        <th><a href="" ng-click="$ctrl.orderProp = 'name'">Name</a></th>
+        <th>Ingredients</th>
+        <th><a href="" ng-click="$ctrl.orderProp = 'price'">Price</a></th>
+        <th>Add to cart</th>
+    </tr></thead>
+    <tbody>
+    <tr ng-repeat="product in $ctrl.products | orderBy: $ctrl.orderProp | filter:$ctrl.search">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.ingredients | arrayToString}}</td>
+        <td>{{product.price | currency:"$"}}</td>
+        <td><button class="btn btn-default" ng-show="$ctrl.notInCart(product)" ng-click="$ctrl.add(product)">Add</button></td>
+    </tr>
+    </tbody>
+</table>
